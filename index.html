@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+
+    <title>Walkie talkie</title>
+</head>
+<body>
+    
+
+ <div class="circle"></div>
+    <div class="container" id="glass">
+        <div class="wrapper">
+        <div class='downdrop'><img id="dropdownimg2" src="talk.png"></div>
+        <button class="output"><span class="btn-inner">
+            <span class="btn-text">Mów!<span>
+          </span></button>
+        <h3 class="input"></h3>
+        <h4 class="downdrop"> Powyżej pojawi sie transkrypcja Twojej mowy. Komputer powtórzy Twoje słowa.
+            </h4>
+            <h4 class="downdrop"><strong>SPEAK ENGLISH!</strong></h4>
+        </div>
+        </div>
+    <br>
+
+    <div class="downdrop"> <img id="downdropimg" src="walkietalkie.png"></div>
+    
+    <div class="circle2"></div>
+    <div class="circle3"></div>
+ <script src="app.js"></script> 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>  
+<script>
+    const glass = document.getElementById('glass');
+    const timeLine = gsap.timeline({defaults: {ease: 'power2.inOut', duration: 1.5}})
+    timeLine.from('img', {x: '-10%', opacity:0})
+    .from('.container', {opacity:0, delay: 0.5, duration:1}, "-=1.5")
+    .from('.container', {x:'-20%', backdropFilter: 'blur(0px)'})
+    .from('.downdrop', {y:'-30', opacity:0, stagger: 0.2, duration: 0.5}, "-=0.5")
+
+
+
+document.addEventListener("resize", animations);
+animations();
+</script>
+</body>
+</html>
